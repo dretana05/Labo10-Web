@@ -5,6 +5,7 @@ import { PORT } from "./config/config.js";
 import authRoutes from "./routes/auth.routes.js";
 import userRoutes from "./routes/user.routes.js";
 import customerRoutes from "./routes/customer.routes.js";
+import salesRoutes from "./routes/sales.routes.js";
 
 const app = express();
 
@@ -20,5 +21,6 @@ app.get('/', (request, response) => {
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/customers", customerRoutes);
+app.use("/api/sales", salesRoutes);
 
 app.listen(PORT, () => console.log(`Server running at http://localhost:${PORT}`));

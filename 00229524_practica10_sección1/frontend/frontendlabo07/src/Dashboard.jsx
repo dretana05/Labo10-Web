@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Routes, Route, Link, useNavigate } from 'react-router-dom';
 import API from "./utils/api.js";
 import CustomerList from './components/CustomerList';
+import SalesForm from './components/SalesForm';
 
 function Dashboard() {
   const [message, setMessage] = useState("");
@@ -36,7 +37,8 @@ function Dashboard() {
     <div className="dashboard-container">
       <nav className="dashboard-nav">
         <ul>
-          <li><Link to="customers">Clientes</Link></li>
+          <li><Link to="/protected/customers">Clientes</Link></li>
+          <li><Link to="/protected/sales">Registrar Venta</Link></li>
         </ul>
         <button onClick={handleLogout}>Cerrar Sesión</button>
       </nav>
@@ -46,6 +48,7 @@ function Dashboard() {
         <hr />
         <Routes>
           <Route path="customers" element={<CustomerList />} />
+          <Route path="sales" element={<SalesForm />} />
         </Routes>
       </main>
     </div>
