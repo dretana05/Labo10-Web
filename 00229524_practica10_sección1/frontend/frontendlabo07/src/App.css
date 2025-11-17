@@ -211,3 +211,73 @@ body {
   border-radius: 4px;
   margin-top: 1rem;
 }
+
+/* --- Estilos del Formulario de Búsqueda --- */
+.search-form {
+  width: 100%;
+  padding: 1.5rem;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  box-sizing: border-box;
+  margin-bottom: 2rem;
+}
+
+.search-form h2 {
+  margin-top: 0;
+  text-align: center;
+}
+
+.search-bar {
+  display: flex;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.search-bar input {
+  flex-grow: 1;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px 0 0 4px;
+  font-size: 1rem;
+}
+
+.search-bar button {
+  padding: 12px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  border-radius: 0;
+}
+
+.search-bar button:hover {
+  background-color: #45a049;
+}
+
+/* Botón de limpiar */
+.search-bar .clear-btn {
+  background-color: #f44336;
+  border-radius: 0 4px 4px 0;
+  margin-left: 0px;
+}
+.search-bar .clear-btn:hover {
+  background-color: #d32f2f;
+}
+
+/* Contenedor del resultado de búsqueda */
+.search-result-container {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: #e8f5e9;
+  border: 1px solid #a5d6a7;
+  border-radius: 8px;
+}
+.search-result-container h3 {
+  margin-top: 0;
+  color: #2e7d32;
+  text-align: center;
+}
