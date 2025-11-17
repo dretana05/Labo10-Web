@@ -1,42 +1,193 @@
+/* Estilos Globales */
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f0f2f5;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Estilos del Login */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  width: 100%;
+}
+
+.login-form {
+  background: #ffffff;
+  padding: 2.5rem 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.login-form h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: #333;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.login-form input {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.login-form button {
+  width: 100%;
+  padding: 12px 15px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
 }
 
-.card {
-  padding: 2em;
+.login-form button:hover {
+  background-color: #45a049;
 }
 
-.read-the-docs {
-  color: #888;
+.login-form .error-message {
+  color: #f44336;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Estilos del Dashboard */
+.dashboard-container {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.dashboard-nav {
+  width: 220px;
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-right: 1px solid #ddd;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.dashboard-nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.dashboard-nav li {
+  margin-bottom: 15px;
+}
+
+.dashboard-nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.dashboard-nav a:hover {
+  color: #4CAF50;
+}
+
+.dashboard-nav button {
+  margin-top: 30px;
+  width: 100%;
+  padding: 10px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.dashboard-nav button:hover {
+  background-color: #d32f2f;
+}
+
+.dashboard-content {
+  flex-grow: 1;
+  padding: 20px;
+  background-color: #ffffff;
+  overflow-y: auto;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: calc(100% - 220px);
+}
+
+/* Estilos de Contenido General  */
+.content-center {
+  text-align: center;
+  width: 100%;
+}
+
+/* Estilos para la Tabla de Clientes */
+.customer-list-container {
+  width: 90%;
+  max-width: 900px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.customer-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.customer-table th,
+.customer-table td {
+  border: 1px solid #ddd;
+  padding: 12px 15px;
+  text-align: left;
+}
+
+.customer-table th {
+  background-color: #4CAF50;
+  color: white;
+  font-weight: bold;
+}
+
+.customer-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.customer-table tr:hover {
+  background-color: #e2e2e2;
 }

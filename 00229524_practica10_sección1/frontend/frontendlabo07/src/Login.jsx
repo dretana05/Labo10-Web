@@ -1,8 +1,9 @@
-// src/Login.js
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import API from "./utils/api.js";
 
 const Login = () => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -10,21 +11,36 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await API.post("/signin", { email, password });
+      const response = await API.post("/auth/signin", { email, password });
       localStorage.setItem("token", response.data.token);
-      alert("Login successful!");
+      navigate('/protected');
     } catch (err) {
       setError(err.response?.data?.message || "Something went wrong!");
     }
   };
 
   return (
-    <form onSubmit={handleLogin}>
-      <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
-      <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
-      <button type="submit">Login</button>
-      {error && <p>{error}</p>}
-    </form>
+    <div className="login-container">
+      <form className="login-form" onSubmit={handleLogin}>
+        <h2>Iniciar Sesión</h2>
+        <input
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+        <input
+          type="password"
+          placeholder="Contraseña"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+        <button type="submit">Login</button>
+        {error && <p className="error-message">{error}</p>}
+      </form>
+    </div>
   );
 };
 
