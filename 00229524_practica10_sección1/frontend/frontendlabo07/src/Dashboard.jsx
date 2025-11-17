@@ -4,6 +4,7 @@ import API from "./utils/api.js";
 import CustomerList from './components/CustomerList';
 import SalesForm from './components/SalesForm';
 import SalesList from './components/SalesList';
+import SalesReport from './components/SalesReport';
 
 function Dashboard() {
   const [message, setMessage] = useState("");
@@ -41,6 +42,7 @@ function Dashboard() {
           <li><Link to="/protected/customers">Clientes</Link></li>
           <li><Link to="/protected/sales">Registrar Venta</Link></li>
           <li><Link to="/protected/sales-list">Ver Ventas</Link></li>
+          <li><Link to="/protected/sales-report">Reporte de Ventas</Link></li>
         </ul>
         <button onClick={handleLogout}>Cerrar Sesión</button>
       </nav>
@@ -52,6 +54,7 @@ function Dashboard() {
           <Route path="customers" element={<CustomerList />} />
           <Route path="sales" element={<SalesForm />} />
           <Route path="sales-list" element={<SalesList />} />
+          <Route path="sales-report" element={<SalesReport />} />
         </Routes>
       </main>
     </div>

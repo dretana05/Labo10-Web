@@ -46,3 +46,21 @@ export const getSales = (req, res) => {
         res.status(200).json(results.rows);
     });
 };
+
+export const getSalesReport = (req, res) => {
+
+    const query = `
+        SELECT c.name, SUM(s.amount) AS total_sales
+        FROM sales s
+        JOIN customers c ON s.id_customer = c.id
+        GROUP BY c.name
+        ORDER BY total_sales DESC;
+    `;
+
+    pool.query(query, (error, results) => {
+        if (error) {
+            return res.status(500).json({ error: error.message });
+        }
+        res.status(200).json(results.rows);
+    });
+};
